@@ -2,8 +2,8 @@ package fr.utbm.courses.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import fr.utbm.courses.entity.Salle;
-import fr.utbm.courses.repository.SalleDao;
+import fr.utbm.courses.entity.Room;
+import fr.utbm.courses.repository.RoomDao;
 import fr.utbm.courses.repository.Dbservice;
 import java.util.List;
 import java.util.logging.Level;
@@ -22,27 +22,27 @@ import javax.ws.rs.core.MediaType;
 
 // The browser requests per default the HTML MIME type.
 
-@Path("/salles")
-public class SalleAPI {
+@Path("/rooms")
+public class RoomAPI {
     
-   private SalleDao salleStorer = null;
+   private RoomDao roomStorer = null;
    private ObjectMapper mapper = null;
    
-   public SalleAPI() {
-       this.salleStorer = new Dbservice();
+   public RoomAPI() {
+       this.roomStorer = new Dbservice();
        this.mapper = new ObjectMapper();
    }
 
   @GET
   @Path("/list")
   @Produces(MediaType.APPLICATION_JSON)
-  public String getAllSalles() {
-      List<Salle> salles = salleStorer.getRecordsSalle();
+  public String getAllRooms() {
+      List<Room> rooms = roomStorer.getRecordsRoom();
        try {
-           String res = mapper.writeValueAsString(salles);
+           String res = mapper.writeValueAsString(rooms);
            return res;
        } catch (JsonProcessingException ex) {
-           Logger.getLogger(SalleAPI.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(RoomAPI.class.getName()).log(Level.SEVERE, null, ex);
            return "{}";
        }
   }

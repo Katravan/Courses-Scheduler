@@ -8,7 +8,7 @@ package fr.utbm.courses.repository;
 import fr.utbm.courses.entity.Client;
 import fr.utbm.courses.entity.Course;
 import fr.utbm.courses.entity.CourseSession;
-import fr.utbm.courses.entity.Salle;
+import fr.utbm.courses.entity.Room;
 import fr.utbm.courses.util.HibernateUtil;
 import java.util.List;
 import javax.faces.view.Location;
@@ -22,7 +22,7 @@ import org.hibernate.SessionFactory;
  *
  * @author lbessone
  */
-public class Dbservice implements ClientDao, CourseDao, CourseSessionDao, SalleDao{
+public class Dbservice implements ClientDao, CourseDao, CourseSessionDao, RoomDao{
     private final static Logger logger = Logger.getLogger(Dbservice.class);
     
     private SessionFactory sessionFactory = null;
@@ -46,14 +46,14 @@ public class Dbservice implements ClientDao, CourseDao, CourseSessionDao, SalleD
     }
     
     @Override
-    public List<Salle> getRecordsSalle() {
+    public List<Room> getRecordsRoom() {
         Session session = sessionFactory.openSession();
 
-        List<Salle> salles = session.createQuery("from Location").list();
+        List<Room> rooms = session.createQuery("from Location").list();
 
-        logger.info("Successfully got all locations (n=" + salles.size() + ")");
+        logger.info("Successfully got all locations (n=" + rooms.size() + ")");
 
-        return salles;
+        return rooms;
     }
 
     @Override

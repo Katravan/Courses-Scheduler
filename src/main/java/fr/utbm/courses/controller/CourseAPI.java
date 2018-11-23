@@ -20,7 +20,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author Valentin Bourdier
+ * @author Lisa Bessone and Florian Inard
  */
 
 @Path("/courses")
@@ -43,7 +43,7 @@ public class CourseAPI {
            String res = mapper.writeValueAsString(courses);
            return res;
        } catch (JsonProcessingException ex) {
-           Logger.getLogger(SalleAPI.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(RoomAPI.class.getName()).log(Level.SEVERE, null, ex);
            return "{}";
        }
   }

@@ -5,18 +5,18 @@
  */
 package fr.utbm.courses.repository;
 
-import fr.utbm.courses.entity.Salle;
+import fr.utbm.courses.entity.Room;
 import java.util.List;
 
 /**
  *
  * @author lbessone
  */
-public interface SalleDao {
+public interface RoomDao {
 
     /**
      *
      * @return
      */
-    public List<Salle> getRecordsSalle();
+    public List<Room> getRecordsRoom();
 }

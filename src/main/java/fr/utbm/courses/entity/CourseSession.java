@@ -16,7 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-import fr.utbm.courses.entity.Salle;
+import fr.utbm.courses.entity.Room;
 import fr.utbm.courses.entity.Course;
 
 /**
@@ -25,6 +25,7 @@ import fr.utbm.courses.entity.Course;
  */
 @Entity
 @Table(name = "course_session", uniqueConstraints={@UniqueConstraint(columnNames={"id"})})
+
 public class CourseSession implements java.io.Serializable{
     private static final long serialVersionUID = 1L;
 
@@ -45,11 +46,12 @@ public class CourseSession implements java.io.Serializable{
     @OneToOne
     @JoinColumn(name = "course_code")
     private Course course;
-//    
-//    @OneToOne
-//    @JoinColumn(name = "salle_id")
-//    private Salle salle;
+    
+    @OneToOne
+    @JoinColumn(name = "salle_id")
+    private Room room;
 
+    
     public CourseSession() {
     }
 

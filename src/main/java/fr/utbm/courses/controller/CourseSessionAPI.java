@@ -44,7 +44,7 @@ public class CourseSessionAPI {
            String res = mapper.writeValueAsString(courseSessions);
            return res;
        } catch (JsonProcessingException ex) {
-           Logger.getLogger(SalleAPI.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(RoomAPI.class.getName()).log(Level.SEVERE, null, ex);
            return "{}";
        }
   }
@@ -58,7 +58,7 @@ public class CourseSessionAPI {
            String res = mapper.writeValueAsString(courseSessions);
            return res;
        } catch (JsonProcessingException ex) {
-           Logger.getLogger(SalleAPI.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(RoomAPI.class.getName()).log(Level.SEVERE, null, ex);
            return "{}";
        }
   }
@@ -72,7 +72,7 @@ public class CourseSessionAPI {
            String res = mapper.writeValueAsString(courseSessions);
            return res;
        } catch (JsonProcessingException ex) {
-           Logger.getLogger(SalleAPI.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(RoomAPI.class.getName()).log(Level.SEVERE, null, ex);
            return "{}";
        }
   }
@@ -86,7 +86,7 @@ public class CourseSessionAPI {
            String res = mapper.writeValueAsString(courseSessions);
            return res;
        } catch (JsonProcessingException ex) {
-           Logger.getLogger(SalleAPI.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(RoomAPI.class.getName()).log(Level.SEVERE, null, ex);
            return "{}";
        }
   }

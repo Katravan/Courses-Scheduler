@@ -27,7 +27,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author Valentin Bourdier
+ * @author Lisa Bessone and Florian Inard
  */
 @Path("/clients")
 public class ClientAPI {
